@@ -1,0 +1,26 @@
+{
+  "name": "create-tscratch-app",
+  "version": "0.1.0",
+  "description": "A CLI tool for creating TScratch projects.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "sebastian-goat",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "create-tscratch-app": "dist/index.js"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.2"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
+  }
+}
