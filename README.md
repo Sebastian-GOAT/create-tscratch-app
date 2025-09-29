@@ -10,10 +10,17 @@ A CLI tool to scaffold **TScratch projects** — a Scratch-inspired TypeScript g
 
 ## Installation
 
-You don’t need to install globally — just use `npx`:
+You can use the following command:
 
 ```bash
-npx create-tscratch-app my-game
+npx create-tscratch-app@latest my-game
+```
+
+or install globally:
+
+```bash
+npm i -g create-tscratch-app@latest
+create-tscratch-app my-game
 ```
 
 ## Usage

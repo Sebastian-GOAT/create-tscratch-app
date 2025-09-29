@@ -1,16 +1,21 @@
-import { Engine, Rectangle } from 'tscratch';
+import { Engine, RegularShape } from 'tscratch';
 
 const engine = Engine.init();
 
 // Setup
 
-const rect1 = new Rectangle();
+const rect = new RegularShape({
+    sides: 8,
+    radius: 75,
+    color: 'red'
+});
+engine.addSprites(rect);
 
-rect1.x = -100;
-rect1.y = 200;
+rect.goTo(-100, 200);
+rect.point(55);
 
 // Loop
 
 engine.loop = () => {
-    rect1.changeX(3);
+    rect.move(3);
 };
