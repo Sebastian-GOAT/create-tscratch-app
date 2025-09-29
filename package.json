@@ -1,18 +1,27 @@
 {
   "name": "create-tscratch-app",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "description": "A CLI tool for creating TScratch projects.",
   "main": "bin/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "tscratch",
+    "create-tscratch-app",
+    "vite",
+    "project",
+    "game",
+    "canvas"
+  ],
   "author": "sebastian-goat",
   "license": "MIT",
   "type": "commonjs",
   "files": [
     "bin",
-    "template"
+    "template",
+    "README.md",
+    "LICENCE"
   ],
   "bin": {
     "create-tscratch-app": "./bin/index.js"
