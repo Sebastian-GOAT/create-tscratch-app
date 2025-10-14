@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#pen-canvas,
+#game-window {
+    position: absolute;
+    border: 2px solid black;
+}
+
+#game-window {
+    z-index: 1;
+}
+
+#pen-canvas {
+    z-index: 0;
+}

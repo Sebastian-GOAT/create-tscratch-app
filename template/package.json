@@ -17,6 +17,6 @@
     "vite": "^7.1.7"
   },
   "dependencies": {
-    "tscratch": "^0.1.7"
+    "tscratch": "^0.2.2"
   }
 }
