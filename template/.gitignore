@@ -1,0 +1,5 @@
+# Local
+node_modules/
+
+# Build
+dist/
