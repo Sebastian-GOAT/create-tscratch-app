@@ -80,7 +80,3 @@ engine.loop = () => {
 
 - `setScale` → sets the scale of the stage
 - `setAspectRatio` → sets the aspect ratio of the stage
-
-## License
-
-MIT © 2025 sebastian-goat, see [LICENSE](./LICENSE)
