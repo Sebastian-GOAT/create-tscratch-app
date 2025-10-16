@@ -1,4 +1,4 @@
-import { Engine, RegularPolygon } from 'tscratch';
+import { Engine, RegularPolygon, Text } from 'tscratch';
 
 const engine = Engine.init();
 
@@ -12,6 +12,8 @@ const octagon = new RegularPolygon({
 
 octagon.goTo(-100, 200);
 octagon.point(55);
+
+new Text({ content: 'Hello world!' });
 
 // Loop
 
