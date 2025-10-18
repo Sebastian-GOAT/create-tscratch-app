@@ -9,4 +9,4 @@ engine.changeScene('primary');
 
 // Set the loops
 engine.setLoop('primary', primary);
-engine.setLoop('second', secondary);
+engine.setLoop('secondary', secondary);
