@@ -2,6 +2,8 @@
 
 A CLI tool to scaffold **TScratch projects** — a Scratch-inspired TypeScript game engine.
 
+Read the full documentation [here](https://github.com/Sebastian-GOAT/tscratch).
+
 ## Features
 
 - Quickly generate a TScratch project template.
