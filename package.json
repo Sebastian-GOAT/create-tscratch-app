@@ -1,6 +1,6 @@
 {
   "name": "create-tscratch-app",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "A CLI tool for creating TScratch projects.",
   "main": "bin/index.js",
   "scripts": {
