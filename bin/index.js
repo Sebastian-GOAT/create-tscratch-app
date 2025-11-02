@@ -13,7 +13,16 @@ const resolvedTarget = path.resolve(process.cwd(), targetDir);
 // Copy template folder
 (async () => {
     try {
+        // Copy
         await fs.copy(templateDir, resolvedTarget, { overwrite: false, errorOnExist: true });
+
+        // Rename gitignore to .gitignore
+        const gitignoreSrc = path.join(resolvedTarget, 'gitignore');
+        const gitignoreDest = path.join(resolvedTarget, '.gitignore');
+        if (await fs.pathExists(gitignoreSrc))
+            await fs.rename(gitignoreSrc, gitignoreDest);
+
+        // Log the result
         console.log(`\n✅ TScratch project '${targetDir}' created successfully!`);
         console.log('\n📦 Next steps:');
         console.log(`- cd ${targetDir}`);
