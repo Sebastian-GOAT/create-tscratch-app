@@ -1,6 +1,6 @@
 import { Engine } from 'tscratch';
-import primary from './scenes/primary.ts';
-import secondary from './scenes/secondary.ts';
+import primary from '@/scenes/primary.ts';
+import secondary from '@/scenes/secondary.ts';
 
 const engine = Engine.init();
 
