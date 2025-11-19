@@ -18,6 +18,6 @@
     "vite": "^7.1.7"
   },
   "dependencies": {
-    "tscratch": "^0.6.0"
+    "tscratch": "^0.6.1"
   }
 }
