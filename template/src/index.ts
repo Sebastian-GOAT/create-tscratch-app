@@ -1,12 +1,22 @@
-import { Engine } from 'tscratch';
-import primary from '@/scenes/primary.ts';
-import secondary from '@/scenes/secondary.ts';
+import { Engine, Circle } from 'tscratch';
 
 const engine = Engine.init();
 
-// Set the scene
-engine.changeScene('primary');
+// Changable
+const radius = 50;
+const speed = 2;
 
-// Set the loops
-engine.setLoop('primary', primary);
-engine.setLoop('secondary', secondary);
+// Circle
+const circle = new Circle();
+
+let theta = 0;
+
+// Spin in circles forever
+engine.setLoop('main', () => {
+
+    circle.turn(2 * speed);
+    circle.move(speed);
+    circle.setRadius(radius * engine.sin(theta));
+
+    theta = (theta + speed) % 360;
+});
