@@ -14,9 +14,9 @@ body {
 }
 
 #game-window {
-    z-index: 0;
+    z-index: 1;
 }
 
 #pen-canvas {
-    z-index: 1;
+    z-index: 0;
 }
