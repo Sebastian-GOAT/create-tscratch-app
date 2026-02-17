@@ -1,4 +1,4 @@
-import { Engine, Circle } from 'tscratch';
+import { Engine, TSCMath, Circle } from 'tscratch';
 
 const engine = Engine.init();
 
@@ -7,7 +7,7 @@ const radius = 50;
 const speed = 2;
 
 // Circle
-const circle = new Circle();
+const circle = new Circle;
 
 let theta = 0;
 
@@ -16,7 +16,7 @@ engine.setLoop('main', () => {
 
     circle.turn(2 * speed);
     circle.move(speed);
-    circle.setRadius(radius * engine.sin(theta));
+    circle.setRadius(Math.abs(radius * TSCMath.sin(theta)));
 
     theta = (theta + speed) % 360;
 });
