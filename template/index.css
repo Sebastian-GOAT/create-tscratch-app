@@ -11,6 +11,7 @@ body {
 #game-window {
     position: absolute;
     border: 2px solid black;
+    touch-action: none;
 }
 
 #game-window {
