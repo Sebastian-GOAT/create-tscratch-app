@@ -9,6 +9,7 @@ body {
 
 #pen-canvas,
 #game-window {
+    max-width: 90%;
     position: absolute;
     border: 2px solid black;
     touch-action: none;
