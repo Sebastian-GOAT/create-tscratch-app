@@ -5,20 +5,22 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    background-color: #1a1a1a;
 }
 
-#pen-canvas,
-#game-window {
+#tscratch-pen-canvas,
+#tscratch-main-canvas {
     max-width: 90%;
+    border-radius: 0.5rem;
     position: absolute;
-    border: 2px solid black;
     touch-action: none;
 }
 
-#game-window {
+#tscratch-main-canvas {
     z-index: 1;
 }
 
-#pen-canvas {
+#tscratch-pen-canvas {
     z-index: 0;
+    background-color: white;
 }
