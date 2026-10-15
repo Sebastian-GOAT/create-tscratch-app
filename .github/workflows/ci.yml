@@ -21,16 +21,37 @@ jobs:
         with:
           node-version: '24'
 
-      # 3. Scaffold a test project
+      # 3. Install dependencies
+      - name: Install dependencies (create-tscratch-app)
+        run: npm ci
+
+      # 4. Scaffold a test project
       - name: Scaffold project
         run: node bin/index.js test
 
-      # 4. Install dependencies
-      - name: Install dependencies
+      # 5. Install dependencies
+      - name: Install dependencies (tscratch)
+        working-directory: ./test
         run: npm install
 
-      # 5. Run dev server
-      # npx timeout - test server for 10s, accept if no errors, else reject
+      # 6. Run dev server smoke test
+      # Test server for 10s, accept if no errors, else reject
       - name: Run dev server smoke test
+        working-directory: ./test
         run: |
-          timeout 10s npm run dev || code=$?; if [ $code -eq 124 ]; then exit 0; else exit $code; fi
+          # Running with setsid ensures that killing the process also cleans up all child processes
+          setsid npm run dev &
+          SERVER_PID=$!
+          
+          echo "Waiting for the dev server to start..."
+          timeout 15s bash -c 'until curl -s http://localhost:3000 > /dev/null; do sleep 1; done'
+          
+          if [ $? -eq 0 ]; then
+            echo "Smoke test successful! Server is responding."
+            kill -TERM -$SERVER_PID 2>/dev/null || true
+            exit 0
+          else
+            echo "Error: Server failed to start within 15 seconds."
+            kill -TERM -$SERVER_PID 2>/dev/null || true
+            exit 1
+          fi
