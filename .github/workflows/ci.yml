@@ -1,0 +1,36 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Clone the repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up Node.js enviroment
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      # 3. Scaffold a test project
+      - name: Scaffold project
+        run: node bin/index.js test
+
+      # 4. Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # 5. Run dev server
+      # npx timeout - test server for 10s, accept if no errors, else reject
+      - name: Run dev server smoke test
+        run: |
+          timeout 10s npm run dev || code=$?; if [ $code -eq 124 ]; then exit 0; else exit $code; fi

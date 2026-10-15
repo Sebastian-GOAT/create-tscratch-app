@@ -10,7 +10,7 @@
     // Environment Settings
     "module": "nodenext",
     "target": "esnext",
-    "types": [],
+    "types": ["node"],
     "allowImportingTsExtensions": true,
     "noEmit": true,
     // For nodejs:
