@@ -22,7 +22,7 @@
     "vite-plus": "1.2.0"
   },
   "dependencies": {
-    "tscratch": "^1.0.0-beta.2"
+    "tscratch": "^1.0.0-beta.3"
   },
   "overrides": {
     "vite": "npm:@voidzero-dev/vite-plus-core@1.2.0"
