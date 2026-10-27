@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "dev:server": "node --watch src/server/index.ts",
     "dev": "vp dev",
     "dev:host": "vp dev --host",
     "build": "vp build",
